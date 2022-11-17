@@ -149,7 +149,7 @@ a {
   line-height: calc(31 / 26);
   letter-spacing: 3%;
 }
-.header__logo {
+.logo--transform {
   display: flex;
   transition: transform 500ms linear;
 }
@@ -161,7 +161,7 @@ a {
   margin-right: 93px;
   color: #000;
 }
-.header__logo:hover {
+.logo--transform:hover {
   transform: scale(2);
 }
 /* Навігація по сторінках сайта */
