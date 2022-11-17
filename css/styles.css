@@ -937,16 +937,16 @@ border-color:var(--accent-color--);
   text-transform: uppercase;
 }
 
-.social__list.footer {
+.social__list--footer {
   margin: 0 auto;
 }
-.social__button.footer {
+.social__button--footer {
   color: var(--prime-bg-color--);
   background: rgba(255, 255, 255, 0.1);
   transition: var(--bgcolor--) var(--duration--) var(--cubic--);
 }
-.social__button.footer:hover,
-.social__button.footer:focus {
+.social__button--footer:hover,
+.social__button--footer:focus {
   background-color: var(--accent-color--);
 }
 /* Форми підписки */
@@ -955,12 +955,10 @@ border-color:var(--accent-color--);
   display:flex;
   align-items:center;
 }
-.span-label {
+.form__label {
   display: block;
   margin-bottom: 20px;
   text-transform: uppercase;
-}
-.span-label {
   color: var(--prime-bg-color--);
   font-weight: 700;
   font-size: 14px;
@@ -968,7 +966,8 @@ border-color:var(--accent-color--);
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
-.form-input-footer {
+
+.form__input--dark-theme {
   background-color: var(--second-bg-color--);
   color: var(--prime-bg-color--);
   font-weight: 400;
@@ -976,7 +975,6 @@ border-color:var(--accent-color--);
   line-height: calc(20 / 16);
   letter-spacing: 0.03em;
   width: 358px;
-
   padding-left: 16px;
   padding-top: 14px;
   padding-bottom: 14px;
@@ -985,10 +983,10 @@ border-color:var(--accent-color--);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
 }
-.form-input-footer::placeholder {
+.form__input--dark-theme::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
-.submit-btn {
+.submit__btn {
   display: flex;
   align-items: center;
   text-align: center;
@@ -1003,16 +1001,15 @@ border-color:var(--accent-color--);
   padding: 10px 28px;
   transition:var(--bgcolor) var(--duration) var(--cubic--);
 }
-.submit-btn.footer{
+.submit__btn--icon-send{
  align-self :flex-end;
   gap: 10px;
 }
-.submit-icon{
+.submit__icon{
   
  
 }
-
-.submit-btn:focus,
-.submit-btn:hover {
+.submit__btn:focus,
+.submit__btn:hover {
   background-color: #188ce8;
 }
