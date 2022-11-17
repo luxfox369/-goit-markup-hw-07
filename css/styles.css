@@ -76,7 +76,7 @@ a {
 /* більший контейнер */
 .big-container {
   max-width: 1600px;
-  margin: 0 auto; /* батько центрує  в собі*/
+  margin: 0 auto; /*  центрує */
 }
 
 /* меньший контейнер  */
@@ -88,6 +88,7 @@ a {
 /* спільна властивість секцій */
 .section {
   padding-bottom: 94px;
+  padding-top: 94px;
 }
 
 .uppercase {
@@ -124,7 +125,7 @@ a {
   color: var(--title-ccolor--);
 }
 
-/* стилі header */
+/* header section*/
 
 .header-section {
   /* спільний шрифт */
@@ -132,9 +133,13 @@ a {
   font-size: 14px;
   line-height: calc(16 / 14);
   letter-spacing: 0.02em;
-
-  /* margin-bottom:21px; */
+  border-bottom: 1px solid#ECECEC;
 }
+/* весь header у flex container */
+.header__container {
+  display: flex;
+  align-items: center;
+ }
 /* logo */
 .logo {
   font-family: "Raleway", sans-serif;
@@ -144,102 +149,71 @@ a {
   line-height: calc(31 / 26);
   letter-spacing: 3%;
 }
-.logo.header {
+.header__logo {
   display: flex;
   transition: transform 500ms linear;
 }
-.logo.web {
+.logo--web {
   color: var(--accent-color--);
 }
-.logo.studio {
+.logo--studio {
   display: inline-block;
   margin-right: 93px;
   color: #000;
 }
-.logo.header:hover {
+.header__logo:hover {
   transform: scale(2);
-}
-.header-section {
-  border-bottom: 1px solid#ECECEC;
-}
-/* весь header у flex container */
-.header-container {
-  display: flex;
-  /* justify-content: space-between; */
-  align-items: center;
 }
 /* Навігація по сторінках сайта */
 /* навігація  в header  flex container*/
-.header-nav-list {
+.nav__list {
   display: flex;
   justify-content: space-between;
   margin-right: 318px;
 }
 /* елементи навігації */
-.header-nav-item:not(:last-child) {
+.nav__item:not(:last-child) {
   margin-right: 50px;
 }
-
 /* padding link збільшує зону клікабельності */
-.header-nav-link {
+.nav__link {
   position: relative;
   color: var(--title-ccolor--);
   padding: 32px 0px;
   transition: var(--color--) var(--duration--) var(--cubic--);
 }
-
-/* hover на посиланнях в навігації */
-.header-contact-link:focus,
-.header-contact-link:hover,
-.header-nav-link:focus,
-.header-nav-link:hover {
+.nav__link:focus,
+.nav__link:hover {
   color: var(--accent-color--);
 }
-
-.header-nav-link.current::after {
+/* підсвітка посилання активної сторінки */
+.nav__link--current {
+  color: var(--accent-color--);
+}
+.nav__link--current::after {
   position: absolute;
   bottom: 0;
   left: 0;
   content: "";
   display: block; /*даємо геометрію бо псевдокласи рядкові ел-ти*/
-  width: 110%; /*риска шириною батька header-nav-link*/
+  width: 110%; /*риска шириною батька nav__link*/
   height: 4px; /*висота риски*/
   border-radius: 4px; /*заокруглена*/
   background-color: var(--accent-color--);
   transition: var(--bgcolor--) var(--duration--) var(--cubic--),
-    transform 300ms linear;
+  transform 300ms linear;
 }
-.header-nav-link.current:hover:after {
+.nav__link--current:hover:after {
   transform: rotate(180deg);
 }
-
-/* hover/focus на контакти в header */
-.header-contact-link:focus,
-.header-contact-link:hover .contact-icon {
-  fill: var(--accent-color--);
-  color: var(--accent-color--);
-}
-
-/* .header-nav-link.current:hover:after {
-  transform: scale(2);
- } */
-
-/* підсвітка посилання активної сторінки */
-.current {
-  color: var(--accent-color--);
-}
 /* Контакт ліст у flex щоб поставити у рядок */
-.header-contact-list {
+.contact__list {
   display: flex;
   margin: 0 auto;
   gap: 30px;
 }
-/* .header-contact-item:not(:first-child) {
-  margin-left: 30px;
-} */
-
 /* вигляд мейл і телефон */
-.header-contact-link {
+.contact__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -250,16 +224,21 @@ a {
     var(--color--) var(--duration--) var(--cubic--);
 }
 /* колір  від  link-батька */
-.contact-icon {
+.contact__icon {
   display: block;
   fill: currentColor;
   transition: var(--fill--) var(--duration--) var(--cubic--),
     var(--color--) var(--duration--) var(--cubic--);
 }
-
+/* hover на посиланнях в навігації */
+.contact__link:focus,
+.contact__link:hover
+ {
+  color: var(--accent-color--);
+}
 /* hover/focus на контакти в header */
-.header-contact-link:focus,
-.header-contact-link:hover .contact-icon {
+.contact__link:focus,
+.contact__link:hover .contact__icon {
   fill: var(--accent-color--);
   color: var(--accent-color--);
 }
@@ -269,7 +248,7 @@ a {
 /* hero  title-first */
 
 .hero-section {
-  color: var(--prime-bg-color--); /*білий*шрифт */
+  color: var(--prime-bg-color--); 
   background: var(--second-bg-color--);
   background-image: linear-gradient(
       to bottom right,
@@ -277,8 +256,10 @@ a {
       rgba(47, 48, 58, 0.4)
     ),
     url("../images/hero.jpg");
+   
   padding-top: 200px;
   padding-bottom: 200px;
+  /* margin-top:80px; */
 }
 /* анімація елемент падає зверху букви розїжджаються і все стає на місце */
 @keyframes slide-to-bottom {
@@ -376,7 +357,7 @@ a {
   pointer-events: none;
 }
 /* кнопка закриття в модальному вікні */
-.btn-close {
+.button-close {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -385,7 +366,7 @@ a {
   display: block;
   padding: 0;
 }
-.btn-close:hover .icon-close {
+.button-close:hover .icon-close {
   stroke: var(--accent-color--);
 }
 .icon-close {
@@ -515,7 +496,7 @@ border-color:var(--accent-color--);
 /* h3 - .tille-third */
 /* feature-section обгорнута в  container 1200px */
 .feature-section {
-  padding-top: 94px;
+  /* padding-top: 94px; */
 }
 .submit-btn.order {
   display: block;
@@ -558,6 +539,9 @@ border-color:var(--accent-color--);
 }
 /* секція deal Чим ми займаємось */
 /*h2 - .title-second*/
+.deal-section {
+  padding-top:0px;
+}
 
 .container .deal {
   margin: 0px 15px;
@@ -614,8 +598,8 @@ border-color:var(--accent-color--);
 /* h2 Наша команда - title-second */
 .team-section {
   background: #f5f4fa;
-  padding-top: 94px;
-  padding-bottom: 94px;
+  /* padding-top: 94px; */
+  
 }
 
 .team-title.title-second {
@@ -708,7 +692,6 @@ border-color:var(--accent-color--);
 /* секція Постійні клієнти */
 .client-section {
   padding-top: 94px;
-  padding-bottom: 94px;
 }
 .title-client {
   margin-bottom: 50px;
