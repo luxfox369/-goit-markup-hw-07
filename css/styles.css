@@ -690,17 +690,17 @@ border-color:var(--accent-color--);
 .client-section {
   padding-top: 94px;
 }
-.title-client {
+.client__title {
   margin-bottom: 50px;
 }
-.client-list {
+.client__list {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
 
-.client-link {
+.client__link {
   display: flex;
   width: 170px;
   height: 92px;
@@ -714,12 +714,12 @@ border-color:var(--accent-color--);
     var(--bordercolor--) var(--duration--) var(--cubic--);
   overflow: hidden;
 }
-.client-icon {
+.client__icon {
   fill: currentColor;
 }
 
-.client-link:hover,
-.client-link:focus {
+.client__link:hover,
+.client__link:focus {
   border-color: var(--accent-color--);
   color: var(--accent-color--);
   transform: scale(2);
