@@ -153,10 +153,10 @@ a {
   display: flex;
   transition: transform 500ms linear;
 }
-.logo--web {
+.logo__web--blue {
   color: var(--accent-color--);
 }
-.logo--studio {
+.logo__studio--mr93black {
   display: inline-block;
   margin-right: 93px;
   color: #000;
