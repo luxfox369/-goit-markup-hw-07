@@ -489,31 +489,30 @@ border-color:var(--accent-color--);
   text-decoration:underline;
   color:var(--accent-color--);
 }
-
+/* кнопка відправлення форми заявку */
+ .submit-btn.order {
+  display: block;
+  margin: 0 auto;
+}
 /* секція Особливості */
 /* feature-section */
 /* h2 схований */
 /* h3 - .tille-third */
 /* feature-section обгорнута в  container 1200px */
-.feature-section {
-  /* padding-top: 94px; */
-}
-.submit-btn.order {
-  display: block;
-  margin: 0 auto;
-}
+
+
 /* список feature ставимо в рядок */
-.feature-list {
+.feature__list {
   display: flex;
   justify-content: space-between;
 }
 /* заголовки в li feature-list */
-.feature-list .title-third {
+.feature__list .title-third {
   text-align: left;
   margin-bottom: 10px;
 }
 /* p в li */
-.feature-text {
+.feature__text {
   font-size: 14px;
   line-height: calc(24 / 14);
   letter-spacing: 0.03em;
@@ -521,20 +520,20 @@ border-color:var(--accent-color--);
 }
 /* колекція контайнера flex-list * /
 /* всі елементи однакової величини на main axis */
-.feature-list-item {
+.feature__item {
   flex-basis: 270px;
 }
 /* відстань між всіма ел-ми колекції крім останнього */
-.feature-list-item:not(:last-child) {
+.feature__item:not(:last-child) {
   margin-right: 30px;
 }
-.icon-block {
+.feature__icon--block {
   background: var(--button-bg-color--);
   border-radius: 4px;
   padding: 25px 100px;
   margin-bottom: 30px;
 }
-.feature-icon {
+.feature__icon {
   display: block;
 }
 /* секція deal Чим ми займаємось */
