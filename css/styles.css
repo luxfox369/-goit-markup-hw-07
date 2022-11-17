@@ -542,34 +542,34 @@ border-color:var(--accent-color--);
   padding-top:0px;
 }
 
-.container .deal {
+/* .container .deal {
   margin: 0px 15px;
-}
+} */
 
-.title-second.deal-title {
+.deal__title.title-second {
   margin-bottom: 50px;
 }
 /* картинки в рядок */
-.deal-list {
+.deal__list {
   display: flex;
   justify-content: space-between;
 }
 /* Якщо змінити к-ть картинок поки не знаю що написати замість 3 */
 /* img  діти li які є ел-ми flex container тому унаслідують наступне  */
-.deal-list-item {
+.deal__item {
   flex-basis: calc((100% - 30px * 2) / 3);
 }
 /* обгортка для фоток чим ми займаємось */
-.wrapper {
+.deal__item--wrapper {
   /*відносно нього overlay-box з текстом на темному фоні*/
   position: relative;
 }
-.deal-list-img {
+.deal__img {
   width: 370px;
   max-height: 294px;
 }
 /* блок з текстом */
-.overlay-box {
+.overlay--box {
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -577,7 +577,7 @@ border-color:var(--accent-color--);
   background-color: rgba(47, 48, 58, 0.8);
 }
 /* сам текст  */
-.overlay-text {
+.overlay__text {
   font-weight: 700;
   font-size: 14px;
   line-height: calc(16 / 14);
@@ -601,17 +601,16 @@ border-color:var(--accent-color--);
   
 }
 
-.team-title.title-second {
+.team__title.title-second {
   margin-bottom: 50px;
 }
 
-.team-cards-list {
+.team-cards__list {
   display: flex;
-
   justify-content: center;
 }
 
-.team-card-item {
+.team-card__item {
   background-color: var(--prime-bg-color--);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -622,20 +621,20 @@ border-color:var(--accent-color--);
   transition: var(--transform--) 1s var(--cubic--);
 }
 
-.team-card-item:last-child {
+.team-card__item:last-child {
   margin-right: 0px;
 }
-.team-card-item:hover {
+.team-card__item:hover {
   transform: scale(1.5);
 }
 
-.card-image {
+.team-card__image {
   display: block;
   width: 270px;
   margin-bottom: 30px;
 }
 /* h3 - card-name title-second */
-.card-name {
+.team-card__name {
   font-weight: 500;
   font-size: 16px;
   line-height: calc(18.75 / 1 6);
@@ -644,9 +643,8 @@ border-color:var(--accent-color--);
   text-align: center;
   margin-bottom: 10px;
 }
-
 /* position */
-.card-position {
+.team-card__position {
   font-size: 16px;
   line-height: calc(18.75 / 16);
   text-align: center;
@@ -655,7 +653,7 @@ border-color:var(--accent-color--);
   /* margin-bottom: 16px; */
 }
 /* список іконом посилань соціальних мереж в рядок*/
-.social-link-list {
+.social__list {
   display: flex;
   gap: 10px;
   justify-content: space-between;
@@ -664,7 +662,7 @@ border-color:var(--accent-color--);
 }
 
 /* кругла кнопка на соцмережі */
-.social-link-button {
+.social__button {
   /* display: block; */
   display: flex;
   width: 44px;
@@ -678,12 +676,12 @@ border-color:var(--accent-color--);
     var(--bgcolor--) var(--duration--) var(--cubic--);
 }
 /* колір іконка соцмереж наслідує від кнопки-батька*/
-.social-link-icon {
+.social__icon {
   fill: currentColor;
 }
 /* реакція  на наведення на іконки соцмерех*/
-.social-link-button:hover,
-.social-link-button:focus {
+.social__button:hover,
+.social__button:focus {
   background-color: var(--accent-color--);
   color: var(--prime-bg-color--);
 }
@@ -868,29 +866,39 @@ border-color:var(--accent-color--);
 }
 
 /* секція footer*/
-
+/* спільний шрифт для блоку address */
 .footer-section {
   background: var(--second-bg-color--);
   padding-top: 60px;
   padding-bottom: 60px;
   /* border-top: 0px solid transparent; */
 }
-/* спільний шрифт для блоку address */
-.footer-section .logo.studio {
+.footer-combine {
+  display: flex;
+  /* gap: 70px; */
+  align-items: baseline;
+  color: var(--prime-bg-color--);
+}
+.logo--mb20 {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.logo__studio--mr0_white {
   display: inline-block;
   color: var(--prime-bg-color--);
   margin-right: 0px;
 }
-/* обгорнули в div щоб зобити блочним*/
-.logo.footer {
-  display: inline-block;
-  margin-bottom: 20px;
-}
-.footer-list {
+.footer__address {
+  margin-right: 70px;
+} 
+.address__list {
   width: 231px;
 }
+.address__item:not(:last-child) {
+  margin-bottom: 9px;
+}
 
-.footer-link {
+.address__link {
   color: rgba(255, 255, 255, 0.6);
   font-style: normal;
   font-size: 14px;
@@ -898,36 +906,29 @@ border-color:var(--accent-color--);
   letter-spacing: 0.03em;
   transition: var(--color--) var(--duration--) var(--cubic--);
 }
-/* реакція на наведення мишки або клавіатури на любий лінк футера */
-.footer-link:hover,
-.footer-link:focus {
-  color: var(--accent-color--);
-}
 
-.footer-list-item:not(:last-child) {
-  margin-bottom: 9px;
-}
-
-/* адреса  */
-.footer-link.map {
+.address__link--white {
   color: var(--prime-bg-color--);
   transition: var(--color--) var(--duration--) var(--cubic--);
 }
-
-.footer-link.map:hover,
-.footer-link.map:focus {
+/* реакція на наведення мишки або клавіатури на любий лінк футера */
+.address__link:hover,
+.address__link:focus {
   color: var(--accent-color--);
 }
-.footer-combine {
+
+.footer__social {
   display: flex;
-  /* gap: 70px; */
-  align-items: baseline;
+  flex-direction:column;
+  gap: 20px;
+  align-content: flex-start;
+  justify-content: flex-start;
+  margin-right: 93px;
 }
-.footer-left {
-  margin-right: 70px;
-}
-.social-text,
-.span-label {
+
+
+.social__text
+ {
   color: var(--prime-bg-color--);
   font-weight: 700;
   font-size: 14px;
@@ -935,24 +936,17 @@ border-color:var(--accent-color--);
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
-.footer-center {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-content: flex-start;
-  justify-content: flex-start;
-  margin-right: 93px;
-}
-.social-link-list.footer {
+
+.social__list.footer {
   margin: 0 auto;
 }
-.social-link-button.footer {
+.social__button.footer {
   color: var(--prime-bg-color--);
   background: rgba(255, 255, 255, 0.1);
   transition: var(--bgcolor--) var(--duration--) var(--cubic--);
 }
-.social-link-button.footer:hover,
-.social-link-button.footer:focus {
+.social__button.footer:hover,
+.social__button.footer:focus {
   background-color: var(--accent-color--);
 }
 /* Форми підписки */
@@ -966,7 +960,14 @@ border-color:var(--accent-color--);
   margin-bottom: 20px;
   text-transform: uppercase;
 }
-
+.span-label {
+  color: var(--prime-bg-color--);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
 .form-input-footer {
   background-color: var(--second-bg-color--);
   color: var(--prime-bg-color--);
