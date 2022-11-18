@@ -279,7 +279,7 @@ a {
   }
 }
 
-.title-first.hero-title {
+.hero__title.title-first {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
@@ -287,7 +287,7 @@ a {
   animation: slide-to-bottom 5s linear 200ms both;
 }
 
-.hero-button {
+.hero__button {
   padding: 10px 32px;
   font-weight: 700;
   font-size: 16px;
@@ -314,8 +314,8 @@ a {
     transform: perspective(400px) translateY(0);
   }
 }
-.hero-button:focus,
-.hero-button:hover {
+.hero__button:focus,
+.hero__button:hover {
   background-color: #188ce8;
 }
 /* підкладка для модального вікна */
@@ -329,6 +329,11 @@ a {
   opacity: 1;
   transition: opacity var(--duration--) var(--cubic--),
     visibility var(--duration--) var(--cubic--);
+}
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 /* модальне вікно */
 .modal {
@@ -349,13 +354,6 @@ a {
   /* transform:translateX(-50%) translateY(-70%); */
   transform: scale(0.1);
 }
-
-/* toggle */
-.backdrop.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
 /* кнопка закриття в модальному вікні */
 .button-close {
   position: absolute;
@@ -366,17 +364,18 @@ a {
   display: block;
   padding: 0;
 }
-.button-close:hover .icon-close {
-  stroke: var(--accent-color--);
-}
 .icon-close {
   fill: #fff;
   /* хрестик,коло stroke :/*var(--button-bg-color--);  */
 }
+.button-close:hover .icon-close {
+  stroke: var(--accent-color--);
+}
+
 
 /* Форма */
 
-.form-caption {
+.form__caption {
   display: block;
   font-weight: 700;
   font-size: 20px;
@@ -386,7 +385,7 @@ a {
   color: var(--title-ccolor--);
   margin: 40px 40px 12px 40px;
 }
-.form-list {
+.form__list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -394,7 +393,7 @@ a {
   gap: 10px;
 }
 
-.form-label {
+.form__label {
   display: block;
   text-align: left;
   font-size: 12px;
@@ -403,8 +402,10 @@ a {
   color: var(--text-color--);
   margin-bottom: 4px;
 }
-
-.form-input {
+.form__field{
+   position: relative;
+ }
+.form__input {
  width: 448px;
  font-size:16px;
  outline: none;
@@ -413,15 +414,18 @@ a {
  transition:var(--bordercolor--) var(--duration--)var(--cubic--);
  
 }
-.form-input.row {
+.form__input--h40-pl42{
   height: 40px;
   padding-left:42px;
  
  }
- .form-field{
-   position: relative;
- }
- .form-icon{
+.form__input--textarea {
+  resize: none;
+  padding: 12px 16px;
+  
+}
+ 
+ .form__icon{
   position: absolute;
   top:65%;
   left:12px;
@@ -430,24 +434,19 @@ a {
     transition:var(--color--) var(--duration) var(--cubic--);
     }
 
-.form-input.textarea {
-  resize: none;
-  padding: 12px 16px;
-  
-}
-.form-input::placeholder{
+.form__input::placeholder{
   font-size: 12px;
   line-height: calc(14 / 12);
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-input:focus +.form-icon,
-.form-input:hover +.form-icon{
+.form__input:focus +.form__icon,
+.form__input:hover +.form__icon{
     color:var(--accent-color--);
 }
- .form-input:focus,
- .form-input:hover{
+ .form__input:focus,
+ .form__input:hover{
   /* appearance: none; */
   border:1px solid var(--accent-color--);
   border-radius: 4px;
@@ -455,7 +454,7 @@ a {
  }
 
 
-.form-label.checkbox {
+.form__label--checkbox {
   display:flex;
   align-items:center;
   gap:8px;
@@ -467,7 +466,7 @@ a {
   position:relative;
 }
 
-.input-checkbox {
+.form__input--checkbox {
   appearance: none;
   position:absolute;
 }
@@ -480,7 +479,7 @@ a {
               var(--bordercolor) var(--duration--)var(--cubic--);
 }
 
-.input-checkbox:checked +.icon-check{
+.form__input--checkbox:checked +.icon-check{
 background-color: var(--accent-color--);
 border-color:var(--accent-color--);
 
@@ -490,7 +489,7 @@ border-color:var(--accent-color--);
   color:var(--accent-color--);
 }
 /* кнопка відправлення форми заявку */
- .submit-btn.order {
+ .submit__btn--order {
   display: block;
   margin: 0 auto;
 }
@@ -950,12 +949,12 @@ border-color:var(--accent-color--);
   background-color: var(--accent-color--);
 }
 /* Форми підписки */
-.footer-form {
+.footer-submit {
   width: 570px;
   display:flex;
   align-items:center;
 }
-.form__label {
+.submit__label {
   display: block;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -967,7 +966,7 @@ border-color:var(--accent-color--);
   text-transform: uppercase;
 }
 
-.form__input--dark-theme {
+.submit__input {
   background-color: var(--second-bg-color--);
   color: var(--prime-bg-color--);
   font-weight: 400;
@@ -983,7 +982,7 @@ border-color:var(--accent-color--);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
 }
-.form__input--dark-theme::placeholder {
+.submit__input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
 .submit__btn {
