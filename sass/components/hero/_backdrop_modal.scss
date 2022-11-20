@@ -1,0 +1,61 @@
+/* підкладка для модального вікна */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity var(--duration--) var(--cubic--),
+        visibility var(--duration--) var(--cubic--);
+}
+
+.backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* модальне вікно заявки*/
+.modal {
+    position: absolute;
+    width: 528px;
+    height: 581px;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%) scale(1);
+    background-color: #ffffff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: var(--transform--) 1s var(--cubic--),
+        var(--transform--) 1s var(--cubic--);
+}
+
+.backdrop.is-hidden .modal {
+    /* transform:translateX(-50%) translateY(-70%); */
+    transform: scale(0.1);
+}
+
+/* кнопка закриття в модальному вікні */
+.button-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #fff;
+    /*фон кнопки*/
+    color: var(--icon-color--);
+    display: block;
+    padding: 0;
+}
+
+.icon-close {
+    fill: #fff;
+    /* хрестик,коло stroke :/*var(--button-bg-color--);  */
+}
+
+.button-close:hover .icon-close {
+    stroke: var(--accent-color--);
+}
