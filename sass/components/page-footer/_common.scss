@@ -14,13 +14,15 @@
     color: var(--prime-bg-color--);
 }
 
-.logo--mb20 {
+.logo{
+   &--mb20 {
     display: inline-block;
     margin-bottom: 20px;
-}
+   }
 
-.logo__studio--mr0_white {
+   &__studio--mr0_white {
     display: inline-block;
     color: var(--prime-bg-color--);
     margin-right: 0px;
+   }
 }

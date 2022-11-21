@@ -17,17 +17,22 @@
     color: var(--title-ccolor--);
     padding: 32px 0px;
     transition: var(--color--) var(--duration--) var(--cubic--);
+    &:focus,
+    &:hover,
+    &--current{
+        color: var(--accent-color--);
+       }
 }
 
-.nav__link:focus,
-.nav__link:hover {
-    color: var(--accent-color--);
-}
+// .nav__link:focus,
+// .nav__link:hover {
+//     color: var(--accent-color--);
+// }
 
 /* підсвітка посилання активної сторінки */
-.nav__link--current {
-    color: var(--accent-color--);
-}
+// .nav__link--current {
+//     color: var(--accent-color--);
+// }
 
 .nav__link--current::after {
     position: absolute;
@@ -44,8 +49,9 @@
     /*заокруглена*/
     background-color: var(--accent-color--);
     transition: var(--bgcolor--) var(--duration--) var(--cubic--),
-        transform 300ms linear;
-}
+                transform 300ms linear;
+
+    }
 
 .nav__link--current:hover:after {
     transform: rotate(180deg);

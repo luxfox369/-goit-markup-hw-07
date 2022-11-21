@@ -2,16 +2,17 @@
 /* h1 Портфоліо -title-first схований */
 /* меню фільтра проектів */
 /* меню фільтра - flex container */
-.filter__list {
+.filter{
+  &__list {
     display: flex;
     justify-content: center;
     gap: 8px;
     margin-bottom: 50px;
-}
+  }
 
-/* кнопка фільтра за замовчанням inline */
-
-.filter__button {
+/* кнопка за замовчанням inline */
+/* кнопки фільтра проектів при hover */
+  &__button {
     display: inline-block;
     text-align: center;
     font-weight: 500;
@@ -26,17 +27,17 @@
     transition: var(--color--) var(--duration--) var(--cubic--),
         var(--bgcolor--) var(--duration--) var(--cubic--),
         var(--transform--) var(--duration--) var(--cubic--);
+    &:focus,
+    &:hover {
+            color: var(--prime-bg-color--);
+            background-color: var(--accent-color--);
+            transform: scale(1.15);
+        }
+  }
 }
-
 /* Перша кнопка має інші падінги */
 /* .filter__button.all {
   padding: 6px 25px;
 } */
 
-/* кнопки фільтра проектів при hover */
-.filter__button:focus,
-.filter__button:hover {
-    color: var(--prime-bg-color--);
-    background-color: var(--accent-color--);
-    transform: scale(1.15);
-}
+

@@ -15,7 +15,18 @@
     gap: 10px;
     transition: var(--fill--) var(--duration--) var(--cubic--),
         var(--color--) var(--duration--) var(--cubic--);
+
+        &:focus,
+        &:hover{
+        color: var(--accent-color--);
+        }
 }
+
+/* hover на посиланнях в навігації */
+// .contact__link:focus,
+// .contact__link:hover {
+//     color: var(--accent-color--);
+// }
 
 /* колір  від  link-батька */
 .contact__icon {
@@ -23,17 +34,19 @@
     fill: currentColor;
     transition: var(--fill--) var(--duration--) var(--cubic--),
         var(--color--) var(--duration--) var(--cubic--);
+    .contact__link:focus,
+    .contact__link:hover & {
+                fill: var(--accent-color--);
+                color: var(--accent-color--);
+            }
+
 }
 
-/* hover на посиланнях в навігації */
-.contact__link:focus,
-.contact__link:hover {
-    color: var(--accent-color--);
-}
+
 
 /* hover/focus на контакти в header */
-.contact__link:focus,
-.contact__link:hover .contact__icon {
-    fill: var(--accent-color--);
-    color: var(--accent-color--);
-}
+// .contact__link:focus,
+// .contact__link:hover .contact__icon {
+//     fill: var(--accent-color--);
+//     color: var(--accent-color--);
+// }

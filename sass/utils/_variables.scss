@@ -37,4 +37,18 @@ $width-container: 1200px;
 $padding-container: 15px;
 //змінна для обчислення flex-basis team-card__item 
 $flex-basis:calc($width-container - $padding-container*2);
-//
+//кількість features
+$number-features:4;
+//кількість deal
+$number-deals:3;
+//кількість членів команди
+$number-team-member:4;
+//кількість соцмереж
+$number-social:4;
+//кількість видів проектів
+$number-type-projects:4;
+//кількість проектів
+$number-projects:9;
+// для міксіна центрування абсолютного блока в середині батька
+// $x__abs: left;
+// $y__abs: top;

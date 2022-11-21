@@ -1,8 +1,8 @@
 /* стилі index */
 /* секція hero */
 /* hero  title-first */
-
-.hero-section {
+.hero{
+  &-section {
     color: var(--prime-bg-color--);
     background: var(--second-bg-color--);
     background-image: linear-gradient(to bottom right,
@@ -13,20 +13,20 @@
     padding-top: 200px;
     padding-bottom: 200px;
     /* margin-top:80px; */
-}
+  }
 
 /* анімація елемент падає зверху букви розїжджаються і все стає на місце */
 
 
-.hero__title.title-first {
+  &__title.title-first {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
     width: 696px;
     animation: slide-to-bottom 5s linear 200ms both;
-}
+   }
 
-.hero__button {
+  &__button {
     padding: 10px 32px;
     font-weight: 700;
     font-size: 16px;
@@ -42,11 +42,12 @@
     transition: var(--bgcolor--) var(--duration--) var(--cubic--);
     opacity: 0;
     animation: butjump 300ms ease-out 1s 14 alternate-reverse forwards;
-}
+    // на кнопку hover/focus
+        &:focus,
+        &:hover {
+                background-color: #188ce8;
+            }
 
-/*  */
+   }
 
-.hero__button:focus,
-.hero__button:hover {
-    background-color: #188ce8;
 }

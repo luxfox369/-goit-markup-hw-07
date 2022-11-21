@@ -7,26 +7,30 @@
     margin-right: 93px;
 }
 
-.social__text {
+.social{
+   &__text {
     color: var(--prime-bg-color--);
     font-weight: 700;
     font-size: 14px;
     line-height: calc(16 / 14);
     letter-spacing: 0.03em;
     text-transform: uppercase;
-}
+   }
 
-.social__list--footer {
+   &__list--footer {
     margin: 0 auto;
+   }
 }
 
-.social__button--footer {
+.social__button--footer{
+   
     color: var(--prime-bg-color--);
     background: rgba(255, 255, 255, 0.1);
     transition: var(--bgcolor--) var(--duration--) var(--cubic--);
-}
+  
 
-.social__button--footer:hover,
-.social__button--footer:focus {
+   &:hover,
+   &:focus {
     background-color: var(--accent-color--);
+}
 }
