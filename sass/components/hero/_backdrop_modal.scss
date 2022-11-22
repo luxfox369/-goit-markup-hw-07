@@ -6,24 +6,16 @@
         visibility var(--duration--) var(--cubic--);
         &.is-hidden {
             @extend %is-hidden;
-            &.modal {
+            & .modal {
                 transform: scale(0.01);
             }
             }
 }
-// .backdrop.is-hidden .modal {
-//     /* transform:translateX(-50%) translateY(-70%); */
-//     transform: scale(0.1);
-// }
-/* модальне вікно заявки*/
+
 .modal {
     width: 528px;
     height: 581px;
-    //центр батька для верхнього правого кута
-    // position: absolute;
-    // top: 50%;
-    // right: 50%;
-    // transform: translate(50%,-50%) scale(1);  //по середні батька
+    
     @include centeredAbsolute($x__abs:right);
        background-color: #ffffff;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),

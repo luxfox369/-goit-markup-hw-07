@@ -90,7 +90,7 @@
             transform: perspective(400px) translateY(0);
   }
 }
-/*центрує блок всередині батька*/
+/*центрує блок всередині батька /можна зминити кут будови, що впливає на ефект  scale() */
 .backdrop.is-hidden {
   visibility: hidden;
   opacity: 0;
@@ -477,12 +477,11 @@ body {
   -webkit-transition: opacity var(--duration--) var(--cubic--), visibility var(--duration--) var(--cubic--);
   transition: opacity var(--duration--) var(--cubic--), visibility var(--duration--) var(--cubic--);
 }
-.backdrop.is-hidden.modal {
+.backdrop.is-hidden .modal {
   -webkit-transform: scale(0.01);
           transform: scale(0.01);
 }
 
-/* модальне вікно заявки*/
 .modal {
   width: 528px;
   height: 581px;
