@@ -97,6 +97,23 @@
   pointer-events: none;
 }
 
+.project__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
 /* reset  обнулюємо відступи/стилі призначені browser*/
 h1,
 h2,
@@ -457,13 +474,6 @@ body {
 
 /* підкладка для модального вікна */
 .backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  opacity: 1;
   -webkit-transition: opacity var(--duration--) var(--cubic--), visibility var(--duration--) var(--cubic--);
   transition: opacity var(--duration--) var(--cubic--), visibility var(--duration--) var(--cubic--);
 }
@@ -510,7 +520,10 @@ body {
 }
 
 /* Форма в модалці */
-.form_caption {
+.form {
+  /*.form__input*/
+}
+.form__caption {
   display: block;
   font-weight: 700;
   font-size: 20px;
@@ -536,6 +549,13 @@ body {
           justify-content: center;
   gap: 10px;
 }
+.form__field {
+  position: relative;
+}
+.form__agreement {
+  text-decoration: underline;
+  color: var(--accent-color--);
+}
 .form__label {
   display: block;
   text-align: left;
@@ -544,15 +564,45 @@ body {
   letter-spacing: 0.01em;
   color: var(--text-color--);
   margin-bottom: 4px;
+  /*.form__label--checkbox*/
 }
-.form__field {
+.form__label--checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  margin: 20px 53px 30px 52px;
+  font-size: 14px;
+  line-height: 1.7142857143;
+  letter-spacing: 0.03em;
+  color: var(--text-color--);
   position: relative;
 }
-.form__agreement {
-  text-decoration: underline;
+.form__icon {
+  position: absolute;
+  top: 65%;
+  left: 12px;
+  color: var(--title-ccolor--);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: var(--color--) var(--duration) var(--cubic--);
+  transition: var(--color--) var(--duration) var(--cubic--);
+  /*form__icon*/
+  /*.form__icon--checkbox-1615blue*/
+}
+.form__input:focus + .form__icon, .form__input:hover + .form__icon {
   color: var(--accent-color--);
 }
-
+.form__icon--checkbox-1615blue {
+  display: inline-block;
+  border: 2px solid #2a2a2a;
+  border-radius: 4px;
+  -webkit-transition: var(--bgcolor) var(--duration--) var(--cubic--), var(--bordercolor) var(--duration--) var(--cubic--);
+  transition: var(--bgcolor) var(--duration--) var(--cubic--), var(--bordercolor) var(--duration--) var(--cubic--);
+}
 .form__input {
   width: 448px;
   font-size: 16px;
@@ -561,6 +611,11 @@ body {
   border-radius: 4px;
   -webkit-transition: var(--bordercolor--) var(--duration--) var(--cubic--);
   transition: var(--bordercolor--) var(--duration--) var(--cubic--);
+  /*.form__input--h40-pl42*/
+  /*.form__input--textarea*/
+  /*.form__input--placeholder*/
+  /*.form__input*/
+  /*.form__input--checkbox*/
 }
 .form__input--h40-pl42 {
   height: 40px;
@@ -610,44 +665,7 @@ body {
      -moz-appearance: none;
           appearance: none;
   position: absolute;
-}
-
-.form__label--checkbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 8px;
-  margin: 20px 53px 30px 52px;
-  font-size: 14px;
-  line-height: 1.7142857143;
-  letter-spacing: 0.03em;
-  color: var(--text-color--);
-  position: relative;
-}
-
-.form__icon {
-  position: absolute;
-  top: 65%;
-  left: 12px;
-  color: var(--title-ccolor--);
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  -webkit-transition: var(--color--) var(--duration) var(--cubic--);
-  transition: var(--color--) var(--duration) var(--cubic--);
-}
-.form__input:focus + .form__icon, .form__input:hover + .form__icon {
-  color: var(--accent-color--);
-}
-
-.form__icon--checkbox-1615blue {
-  display: inline-block;
-  border: 2px solid #2a2a2a;
-  border-radius: 4px;
-  -webkit-transition: var(--bgcolor) var(--duration--) var(--cubic--), var(--bordercolor) var(--duration--) var(--cubic--);
-  transition: var(--bgcolor) var(--duration--) var(--cubic--), var(--bordercolor) var(--duration--) var(--cubic--);
+  /*.form__input--checkbox*/
 }
 .form__input--checkbox:checked + .form__icon--checkbox-1615blue {
   background-color: var(--accent-color--);
@@ -1149,21 +1167,17 @@ body {
   /* background-image: url("../images/project1.jpg"); */
 }
 .project__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
   /* на весь img*/
-  height: 102%;
+  height: 102%; /*ховаємо вниз*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: var(--accent-color--);
   -webkit-transform: perspective(300px) translateY(101%) rotateY(5deg);
           transform: perspective(300px) translateY(101%) rotateY(5deg);
@@ -1174,12 +1188,11 @@ body {
   -webkit-transform: perspective(300px) translatey(0) rotateY(360deg);
           transform: perspective(300px) translatey(0) rotateY(360deg);
 }
-.project__item:hover .project__overlay__description {
+.project__about {
   font-size: 18px;
   line-height: 1.5555555556;
   letter-spacing: 0.03em;
   color: var(--prime-bg-color--);
-  /* outline: 1px solid red; */
   padding: 63px 24px;
   margin-top: 10px;
 }

@@ -1,6 +1,6 @@
 /* Форма в модалці */
 .form {
-  &_caption {
+  &__caption {
     display: block;
     font-weight: 700;
     font-size: 20px;
@@ -35,19 +35,21 @@
       letter-spacing: 0.01em;
       color: var(--text-color--);
       margin-bottom: 4px;
+      /*.form__label--checkbox*/
+      &--checkbox {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin: 20px 53px 30px 52px;
+          font-size: 14px;
+          line-height: calc(24 / 14);
+          letter-spacing: 0.03em;
+          color: var(--text-color--);
+          position: relative;
+        }
      }   
      
-  &--checkbox {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 20px 53px 30px 52px;
-      font-size: 14px;
-      line-height: calc(24 / 14);
-      letter-spacing: 0.03em;
-      color: var(--text-color--);
-      position: relative;
-     }
+  
       
   &__icon {
           position: absolute;
@@ -71,7 +73,7 @@
           }
         }
    /*.form__input*/ 
-  &_input {
+  &__input {
     width: 448px;
     font-size: 16px;
     outline: none;
@@ -107,7 +109,7 @@
             appearance: none;
             position: absolute;
             /*.form__input--checkbox*/
-            &:checked + & {
+            &:checked + .form__icon--checkbox-1615blue {
                 background-color: var(--accent-color--);
                 border-color: var(--accent-color--);
               }
