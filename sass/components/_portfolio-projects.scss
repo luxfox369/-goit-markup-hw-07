@@ -1,6 +1,6 @@
 /* projects */
 /* h2 - title-econd  */
-.project{
+.project {
 
   &__list {
     display: flex;
@@ -38,19 +38,18 @@
     }
 
    &__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+   //  position: absolute;
+   //  top: 0;
+   //  left: 0;
+   //  width: 100%;
     /* на весь img*/
-    height: 102%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %overlay100;
+    height: 102%; /*ховаємо вниз*/
+    @include centeredFlex();
     background-color: var(--accent-color--);
     transform: perspective(300px) translateY(101%) rotateY(5deg);
     transition: var(--transform--) 2000ms var(--cubic--),
-        var(--transform--) 2000ms var(--cubic--);
+                var(--transform--) 2000ms var(--cubic--);
         
    .project__item:hover & {
        transform: perspective(300px) translatey(0) rotateY(360deg);
@@ -61,9 +60,9 @@
     line-height: calc(28 / 18);
     letter-spacing: 0.03em;
     color: var(--prime-bg-color--);
-    outline: 1px solid red;
     padding: 63px 24px;
     margin-top: 10px;
+    outline: 1px solid red;
     }
           
 /* згрупування під карткою проекту */
