@@ -1,7 +1,7 @@
 /* підкладка для модального вікна */
 
 .backdrop {
-    @extend %backdrop;
+    @extend %fixed00-100;
     transition: opacity var(--duration--) var(--cubic--),
         visibility var(--duration--) var(--cubic--);
         &.is-hidden {
