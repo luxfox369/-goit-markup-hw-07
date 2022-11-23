@@ -2,6 +2,7 @@
 
 .backdrop {
     @extend %fixed00-100;
+    overflow-y: scroll; /*щоб не скролився контент під ним*/
     transition: opacity var(--duration--) var(--cubic--),
         visibility var(--duration--) var(--cubic--);
         &.is-hidden {

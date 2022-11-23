@@ -5,6 +5,9 @@ body {
     /*'Roboto', sans-serif*/
     color: var(--text-color--);
     background-color: var(--prime-bg-color--);
+    &.modal-open{
+      overflow: hidden;
+    }
 }
 /*загальне налаштування для кнопок */
 .btn {

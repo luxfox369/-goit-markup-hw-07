@@ -7,9 +7,10 @@
 
 /* вигляд мейл і телефон */
 .contact__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    @include centeredFlex();
     color: var(--text-color--);
     padding: 32px 0px;
     gap: 10px;
@@ -22,11 +23,6 @@
         }
 }
 
-/* hover на посиланнях в навігації */
-// .contact__link:focus,
-// .contact__link:hover {
-//     color: var(--accent-color--);
-// }
 
 /* колір  від  link-батька */
 .contact__icon {
@@ -44,9 +40,3 @@
 
 
 
-/* hover/focus на контакти в header */
-// .contact__link:focus,
-// .contact__link:hover .contact__icon {
-//     fill: var(--accent-color--);
-//     color: var(--accent-color--);
-// }
